@@ -47,7 +47,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.axisOneValue = new System.Windows.Forms.TextBox();
+            this.axisTwoValue = new System.Windows.Forms.TextBox();
+            this.axisThreeValue = new System.Windows.Forms.TextBox();
+            this.axisFourValue = new System.Windows.Forms.TextBox();
+            this.axisFiveValue = new System.Windows.Forms.TextBox();
+            this.axisSixValue = new System.Windows.Forms.TextBox();
+            this.getAxisValue = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // LocalRegist
@@ -246,11 +255,80 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "步骤3：";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.axisSixValue);
+            this.groupBox2.Controls.Add(this.axisFiveValue);
+            this.groupBox2.Controls.Add(this.axisFourValue);
+            this.groupBox2.Controls.Add(this.axisThreeValue);
+            this.groupBox2.Controls.Add(this.axisTwoValue);
+            this.groupBox2.Controls.Add(this.axisOneValue);
+            this.groupBox2.Location = new System.Drawing.Point(512, 48);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(100, 208);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "轴角度";
+            // 
+            // axisOneValue
+            // 
+            this.axisOneValue.Location = new System.Drawing.Point(6, 31);
+            this.axisOneValue.Name = "axisOneValue";
+            this.axisOneValue.Size = new System.Drawing.Size(74, 21);
+            this.axisOneValue.TabIndex = 0;
+            // 
+            // axisTwoValue
+            // 
+            this.axisTwoValue.Location = new System.Drawing.Point(6, 60);
+            this.axisTwoValue.Name = "axisTwoValue";
+            this.axisTwoValue.Size = new System.Drawing.Size(74, 21);
+            this.axisTwoValue.TabIndex = 1;
+            // 
+            // axisThreeValue
+            // 
+            this.axisThreeValue.Location = new System.Drawing.Point(6, 89);
+            this.axisThreeValue.Name = "axisThreeValue";
+            this.axisThreeValue.Size = new System.Drawing.Size(74, 21);
+            this.axisThreeValue.TabIndex = 2;
+            // 
+            // axisFourValue
+            // 
+            this.axisFourValue.Location = new System.Drawing.Point(6, 118);
+            this.axisFourValue.Name = "axisFourValue";
+            this.axisFourValue.Size = new System.Drawing.Size(74, 21);
+            this.axisFourValue.TabIndex = 3;
+            // 
+            // axisFiveValue
+            // 
+            this.axisFiveValue.Location = new System.Drawing.Point(6, 147);
+            this.axisFiveValue.Name = "axisFiveValue";
+            this.axisFiveValue.Size = new System.Drawing.Size(74, 21);
+            this.axisFiveValue.TabIndex = 9;
+            // 
+            // axisSixValue
+            // 
+            this.axisSixValue.Location = new System.Drawing.Point(6, 176);
+            this.axisSixValue.Name = "axisSixValue";
+            this.axisSixValue.Size = new System.Drawing.Size(74, 21);
+            this.axisSixValue.TabIndex = 9;
+            // 
+            // getAxisValue
+            // 
+            this.getAxisValue.Location = new System.Drawing.Point(517, 262);
+            this.getAxisValue.Name = "getAxisValue";
+            this.getAxisValue.Size = new System.Drawing.Size(75, 23);
+            this.getAxisValue.TabIndex = 9;
+            this.getAxisValue.Text = "获取";
+            this.getAxisValue.UseVisualStyleBackColor = true;
+            this.getAxisValue.Click += new System.EventHandler(this.getAxisValue_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 351);
+            this.ClientSize = new System.Drawing.Size(959, 508);
+            this.Controls.Add(this.getAxisValue);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -261,6 +339,8 @@
             this.Name = "Form1";
             this.Text = "  C#基于robot web servcie和ABB机器人通讯";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,6 +367,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox axisSixValue;
+        private System.Windows.Forms.TextBox axisFiveValue;
+        private System.Windows.Forms.TextBox axisFourValue;
+        private System.Windows.Forms.TextBox axisThreeValue;
+        private System.Windows.Forms.TextBox axisTwoValue;
+        private System.Windows.Forms.TextBox axisOneValue;
+        private System.Windows.Forms.Button getAxisValue;
     }
 }
 

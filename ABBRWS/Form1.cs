@@ -28,6 +28,7 @@ namespace ABBRWS
 
 
         private CookieContainer _cookies = new CookieContainer();
+        private CookieContainer twocookies = new CookieContainer();
 
         public Form1()
         {
@@ -95,7 +96,7 @@ namespace ABBRWS
             string body = "jog-mode=AxisGroup1"; //运动模式为单轴运动 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "POST";
-            request.Credentials = new NetworkCredential("Default User", "tobotics");
+            request.Credentials = new NetworkCredential("Default User", "robotics");
             request.CookieContainer = _cookies;
             request.ContentType = "application / x - www - form - uriencoded";
             Stream s = request.GetRequestStream();
@@ -482,6 +483,43 @@ namespace ABBRWS
         {
             this.timer5.Stop();
             this.PerformJogStop();
+        }
+
+     
+
+  
+
+        private void getAxisValue_Click(object sender, EventArgs e)
+        {
+            string url = "http://127.0.0.1/rw/motionsystem/mechunits/ROB_1/jointtarget?json=1";
+            string username = "Default User";
+            string password = "robotics";
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";
+            request.Credentials = new NetworkCredential(username, password);
+            request.CookieContainer = twocookies;
+            request.PreAuthenticate = true;
+            request.Proxy = null;
+            request.Timeout = 60;
+            request.ServicePoint.Expect100Continue = false;
+            WebResponse response = request.GetResponse();
+            if (response != null)
+            {
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    string result = reader.ReadToEnd();
+                    dynamic obj = JsonConvert.DeserializeObject(result);
+                    var service = obj._embedded._state[0];
+                    axisOneValue.Text = service.rax_1;
+                    axisTwoValue.Text = service.rax_2;
+                    axisThreeValue.Text = service.rax_3;
+                    axisFourValue.Text = service.rax_4;
+                    axisFiveValue.Text = service.rax_5;
+                    axisSixValue.Text = service.rax_6;
+
+                }
+            }
         }
     }
 }
