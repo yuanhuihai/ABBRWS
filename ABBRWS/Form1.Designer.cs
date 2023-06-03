@@ -32,18 +32,18 @@
             this.mShipGet = new System.Windows.Forms.Button();
             this.jogAxisModeSet = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.jogOneAdd = new System.Windows.Forms.Button();
-            this.jogOneMinus = new System.Windows.Forms.Button();
-            this.axisTwoMinus = new System.Windows.Forms.Button();
-            this.axisTwoAdd = new System.Windows.Forms.Button();
-            this.axisThreeMinus = new System.Windows.Forms.Button();
-            this.axisThreeAdd = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.axisThreeMinus = new System.Windows.Forms.Button();
+            this.axisThreeAdd = new System.Windows.Forms.Button();
+            this.axisTwoMinus = new System.Windows.Forms.Button();
+            this.axisTwoAdd = new System.Windows.Forms.Button();
+            this.jogOneMinus = new System.Windows.Forms.Button();
+            this.jogOneAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -101,27 +101,79 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "单轴运动";
             // 
-            // jogOneAdd
+            // button14
             // 
-            this.jogOneAdd.Location = new System.Drawing.Point(29, 29);
-            this.jogOneAdd.Name = "jogOneAdd";
-            this.jogOneAdd.Size = new System.Drawing.Size(75, 23);
-            this.jogOneAdd.TabIndex = 0;
-            this.jogOneAdd.Text = "1轴 +";
-            this.jogOneAdd.UseVisualStyleBackColor = true;
-            this.jogOneAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.jogOneAdd_MouseDown);
-            this.jogOneAdd.MouseUp += new System.Windows.Forms.MouseEventHandler(this.jogOneAdd_MouseUp);
+            this.button14.Location = new System.Drawing.Point(123, 174);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 5;
+            this.button14.Text = "6轴 -";
+            this.button14.UseVisualStyleBackColor = true;
             // 
-            // jogOneMinus
+            // button15
             // 
-            this.jogOneMinus.Location = new System.Drawing.Point(123, 29);
-            this.jogOneMinus.Name = "jogOneMinus";
-            this.jogOneMinus.Size = new System.Drawing.Size(75, 23);
-            this.jogOneMinus.TabIndex = 1;
-            this.jogOneMinus.Text = "1轴 -";
-            this.jogOneMinus.UseVisualStyleBackColor = true;
-            this.jogOneMinus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.jogOneMinus_MouseDown);
-            this.jogOneMinus.MouseUp += new System.Windows.Forms.MouseEventHandler(this.jogOneMinus_MouseUp);
+            this.button15.Location = new System.Drawing.Point(29, 174);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(75, 23);
+            this.button15.TabIndex = 4;
+            this.button15.Text = "6轴 +";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(123, 145);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 9;
+            this.button12.Text = "5轴 -";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(29, 145);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 8;
+            this.button13.Text = "5轴 +";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(123, 116);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.TabIndex = 7;
+            this.button10.Text = "4轴 -";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(29, 116);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 23);
+            this.button11.TabIndex = 6;
+            this.button11.Text = "4轴 +";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // axisThreeMinus
+            // 
+            this.axisThreeMinus.Location = new System.Drawing.Point(123, 87);
+            this.axisThreeMinus.Name = "axisThreeMinus";
+            this.axisThreeMinus.Size = new System.Drawing.Size(75, 23);
+            this.axisThreeMinus.TabIndex = 5;
+            this.axisThreeMinus.Text = "3轴 -";
+            this.axisThreeMinus.UseVisualStyleBackColor = true;
+            // 
+            // axisThreeAdd
+            // 
+            this.axisThreeAdd.Location = new System.Drawing.Point(29, 87);
+            this.axisThreeAdd.Name = "axisThreeAdd";
+            this.axisThreeAdd.Size = new System.Drawing.Size(75, 23);
+            this.axisThreeAdd.TabIndex = 4;
+            this.axisThreeAdd.Text = "3轴 +";
+            this.axisThreeAdd.UseVisualStyleBackColor = true;
+            this.axisThreeAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.axisThreeAdd_MouseDown);
+            this.axisThreeAdd.MouseUp += new System.Windows.Forms.MouseEventHandler(this.axisThreeAdd_MouseUp);
             // 
             // axisTwoMinus
             // 
@@ -145,77 +197,27 @@
             this.axisTwoAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.axisTwoAdd_MouseDown);
             this.axisTwoAdd.MouseUp += new System.Windows.Forms.MouseEventHandler(this.axisTwoAdd_MouseUp);
             // 
-            // axisThreeMinus
+            // jogOneMinus
             // 
-            this.axisThreeMinus.Location = new System.Drawing.Point(123, 87);
-            this.axisThreeMinus.Name = "axisThreeMinus";
-            this.axisThreeMinus.Size = new System.Drawing.Size(75, 23);
-            this.axisThreeMinus.TabIndex = 5;
-            this.axisThreeMinus.Text = "3轴 -";
-            this.axisThreeMinus.UseVisualStyleBackColor = true;
+            this.jogOneMinus.Location = new System.Drawing.Point(123, 29);
+            this.jogOneMinus.Name = "jogOneMinus";
+            this.jogOneMinus.Size = new System.Drawing.Size(75, 23);
+            this.jogOneMinus.TabIndex = 1;
+            this.jogOneMinus.Text = "1轴 -";
+            this.jogOneMinus.UseVisualStyleBackColor = true;
+            this.jogOneMinus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.jogOneMinus_MouseDown);
+            this.jogOneMinus.MouseUp += new System.Windows.Forms.MouseEventHandler(this.jogOneMinus_MouseUp);
             // 
-            // axisThreeAdd
+            // jogOneAdd
             // 
-            this.axisThreeAdd.Location = new System.Drawing.Point(29, 87);
-            this.axisThreeAdd.Name = "axisThreeAdd";
-            this.axisThreeAdd.Size = new System.Drawing.Size(75, 23);
-            this.axisThreeAdd.TabIndex = 4;
-            this.axisThreeAdd.Text = "3轴 +";
-            this.axisThreeAdd.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(123, 116);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 7;
-            this.button10.Text = "4轴 -";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(29, 116);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 6;
-            this.button11.Text = "4轴 +";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(123, 145);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 9;
-            this.button12.Text = "5轴 -";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(29, 145);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 8;
-            this.button13.Text = "5轴 +";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(123, 174);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 5;
-            this.button14.Text = "6轴 -";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(29, 174);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 4;
-            this.button15.Text = "6轴 +";
-            this.button15.UseVisualStyleBackColor = true;
+            this.jogOneAdd.Location = new System.Drawing.Point(29, 29);
+            this.jogOneAdd.Name = "jogOneAdd";
+            this.jogOneAdd.Size = new System.Drawing.Size(75, 23);
+            this.jogOneAdd.TabIndex = 0;
+            this.jogOneAdd.Text = "1轴 +";
+            this.jogOneAdd.UseVisualStyleBackColor = true;
+            this.jogOneAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.jogOneAdd_MouseDown);
+            this.jogOneAdd.MouseUp += new System.Windows.Forms.MouseEventHandler(this.jogOneAdd_MouseUp);
             // 
             // label1
             // 
