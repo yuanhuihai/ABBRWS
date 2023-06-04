@@ -6,8 +6,6 @@ using System.Timers;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 
 
 namespace ABBRWS
@@ -53,7 +51,7 @@ namespace ABBRWS
         private void LocalRegist_Click(object sender, EventArgs e)
         {
 
-            string url = $"http://127.0.0.1/users";
+            string url = $"http://"+robotIp.Text+"/users";
             string body = "username=xyz&application=RobotStudio&location=IN-BLR-XXXX&ulocale=local";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "POST";
@@ -67,7 +65,7 @@ namespace ABBRWS
             {
                 if (a.StatusCode == HttpStatusCode.Created)
                 {
-                    Console.WriteLine("Created");
+                    listInfo.Items.Add(System.DateTime.Now+"--本地注册成功!");
                 }
 
             }
@@ -76,7 +74,7 @@ namespace ABBRWS
 
         private void mShipGet_Click(object sender, EventArgs e)
         {
-            string url = $"http://127.0.0.1/rw/mastership/motion?action=request";//请求权限URL
+            string url = $"http://" + robotIp.Text + "/rw/mastership/motion?action=request";//请求权限URL
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "POST";
             request.Credentials = new NetworkCredential("Default User", "robotics");
@@ -87,14 +85,14 @@ namespace ABBRWS
             using (var httpResponse = (HttpWebResponse)request.GetResponse())
                 if (httpResponse.StatusCode == HttpStatusCode.NoContent)
                 {
-                    Console.WriteLine("Motion response:NO_CONTENT");
+                    listInfo.Items.Add(System.DateTime.Now + "--请求控制权限成功!");
                 }
 
         }
 
         private void jogAxisModeSet_Click(object sender, EventArgs e)
         {
-            string url = $"http://127.0.0.1/rw/motionsystem/mechunits/ROB_1?action=set&continue-on-err=1";
+            string url = $"http://" + robotIp.Text + "/rw/motionsystem/mechunits/ROB_1?action=set&continue-on-err=1";
             string body = "jog-mode=AxisGroup1"; //运动模式为单轴运动 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "POST";
@@ -108,14 +106,14 @@ namespace ABBRWS
             {
                 if (httpResponse.StatusCode == HttpStatusCode.NoContent)
                 {
-                    Console.Write("Jog Mode Set Response:NO_CONTENT");
+                   
                 }
             }
         }
 
         private int getCCount()
         {
-            string url = $"http://127.0.0.1/rw/motionsystem?resource=change-count&json=1";
+            string url = $"http://" + robotIp.Text + "/rw/motionsystem?resource=change-count&json=1";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "GET";
             request.Credentials = new NetworkCredential("Default User", "robotics");
@@ -284,7 +282,7 @@ namespace ABBRWS
 
         public void PerformJogStop()
         {
-            string url=$"http://127.0.0.1/rw/motionsystem?action=jog";
+            string url=$"http://" + robotIp.Text + "/rw/motionsystem?action=jog";
             int ccount = getCCount();
             string body = "axis1=0&axis2=0&axis3=0&axis4=0&axis5=0&axis6=0&ccount=" + ccount + "";
             HttpWebRequest request=(HttpWebRequest)WebRequest.Create(url);
@@ -444,7 +442,7 @@ namespace ABBRWS
         public void startAxisMove(string body)
         {
  
-                string url = $"http://127.0.0.1/rw/motionsystem?action=jog";
+                string url = $"http://" + robotIp.Text + "/rw/motionsystem?action=jog";
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                 request.Method = "POST";
                 request.Credentials = new NetworkCredential("Default User", "robotics");
@@ -463,7 +461,7 @@ namespace ABBRWS
         //获取机器人轴坐标
         private void getAxisValue_Click(object sender, EventArgs e)
         {
-            string url = "http://127.0.0.1/rw/motionsystem/mechunits/ROB_1/jointtarget?json=1";
+            string url = "http://" + robotIp.Text + "/rw/motionsystem/mechunits/ROB_1/jointtarget?json=1";
             string username = "Default User";
             string password = "robotics";
 
@@ -493,7 +491,5 @@ namespace ABBRWS
                 }
             }
         }
-
-
     }
 }
