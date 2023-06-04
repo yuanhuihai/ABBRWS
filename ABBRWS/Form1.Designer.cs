@@ -58,8 +58,13 @@
             this.robotIp = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.listInfo = new System.Windows.Forms.ListBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.speedRatio = new System.Windows.Forms.Button();
+            this.opMode = new System.Windows.Forms.Button();
+            this.motorStatus = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // LocalRegist
@@ -345,6 +350,7 @@
             this.robotIp.Name = "robotIp";
             this.robotIp.Size = new System.Drawing.Size(116, 21);
             this.robotIp.TabIndex = 10;
+            this.robotIp.Text = "127.0.0.1";
             // 
             // label3
             // 
@@ -364,11 +370,54 @@
             this.listInfo.Size = new System.Drawing.Size(290, 208);
             this.listInfo.TabIndex = 12;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.motorStatus);
+            this.groupBox3.Controls.Add(this.opMode);
+            this.groupBox3.Controls.Add(this.speedRatio);
+            this.groupBox3.Location = new System.Drawing.Point(50, 331);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(179, 129);
+            this.groupBox3.TabIndex = 13;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "机器人状态";
+            // 
+            // speedRatio
+            // 
+            this.speedRatio.Location = new System.Drawing.Point(6, 31);
+            this.speedRatio.Name = "speedRatio";
+            this.speedRatio.Size = new System.Drawing.Size(75, 23);
+            this.speedRatio.TabIndex = 14;
+            this.speedRatio.Text = "速度百分比";
+            this.speedRatio.UseVisualStyleBackColor = true;
+            this.speedRatio.Click += new System.EventHandler(this.speedRatio_Click);
+            // 
+            // opMode
+            // 
+            this.opMode.Location = new System.Drawing.Point(6, 60);
+            this.opMode.Name = "opMode";
+            this.opMode.Size = new System.Drawing.Size(75, 23);
+            this.opMode.TabIndex = 15;
+            this.opMode.Text = "操作模式";
+            this.opMode.UseVisualStyleBackColor = true;
+            this.opMode.Click += new System.EventHandler(this.opMode_Click);
+            // 
+            // motorStatus
+            // 
+            this.motorStatus.Location = new System.Drawing.Point(6, 89);
+            this.motorStatus.Name = "motorStatus";
+            this.motorStatus.Size = new System.Drawing.Size(75, 23);
+            this.motorStatus.TabIndex = 16;
+            this.motorStatus.Text = "电机状态";
+            this.motorStatus.UseVisualStyleBackColor = true;
+            this.motorStatus.Click += new System.EventHandler(this.motorStatus_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 558);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.listInfo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.robotIp);
@@ -386,6 +435,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,6 +473,10 @@
         private System.Windows.Forms.TextBox robotIp;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listInfo;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button motorStatus;
+        private System.Windows.Forms.Button opMode;
+        private System.Windows.Forms.Button speedRatio;
     }
 }
 

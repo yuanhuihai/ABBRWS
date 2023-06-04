@@ -28,7 +28,7 @@ namespace ABBRWS
 
 
         private CookieContainer _cookies = new CookieContainer();
-        private CookieContainer twocookies = new CookieContainer();
+
 
         public Form1()
         {
@@ -468,7 +468,7 @@ namespace ABBRWS
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "GET";
             request.Credentials = new NetworkCredential(username, password);
-            request.CookieContainer = twocookies;
+            request.CookieContainer = _cookies;
             request.PreAuthenticate = true;
             request.Proxy = null;
             request.Timeout = 60;
@@ -487,6 +487,94 @@ namespace ABBRWS
                     axisFourValue.Text = service.rax_4;
                     axisFiveValue.Text = service.rax_5;
                     axisSixValue.Text = service.rax_6;
+
+                }
+            }
+        }
+
+     
+
+        private void speedRatio_Click(object sender, EventArgs e)
+        {
+            string url = "http://" + robotIp.Text + "/rw/panel/speedratio?json=1";
+            string username = "Default User";
+            string password = "robotics";
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";
+            request.Credentials = new NetworkCredential(username, password);
+            request.CookieContainer = _cookies;
+            request.PreAuthenticate = true;
+            request.Proxy = null;
+            request.Timeout = 60;
+            request.ServicePoint.Expect100Continue = false;
+            WebResponse response = request.GetResponse();
+            if (response != null)
+            {
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    string result = reader.ReadToEnd();
+                    dynamic obj = JsonConvert.DeserializeObject(result);
+                    var service = obj._embedded._state[0];
+
+                    listInfo.Items.Add(DateTime.Now + "--" + service.speedratio);
+
+                }
+            }
+        }
+
+        private void opMode_Click(object sender, EventArgs e)
+        {
+            string url = "http://" + robotIp.Text + "/rw/panel/opmode?json=1";
+            string username = "Default User";
+            string password = "robotics";
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";
+            request.Credentials = new NetworkCredential(username, password);
+            request.CookieContainer = _cookies;
+            request.PreAuthenticate = true;
+            request.Proxy = null;
+            request.Timeout = 60;
+            request.ServicePoint.Expect100Continue = false;
+            WebResponse response = request.GetResponse();
+            if (response != null)
+            {
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    string result = reader.ReadToEnd();
+                    dynamic obj = JsonConvert.DeserializeObject(result);
+                    var service = obj._embedded._state[0];
+               
+                    listInfo.Items.Add(DateTime.Now + "--" + service.opmode);
+
+                }
+            }
+        }
+
+        private void motorStatus_Click(object sender, EventArgs e)
+        {
+            string url = "http://" + robotIp.Text + "/rw/panel/ctrlstate?json=1";
+            string username = "Default User";
+            string password = "robotics";
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";
+            request.Credentials = new NetworkCredential(username, password);
+            request.CookieContainer = _cookies;
+            request.PreAuthenticate = true;
+            request.Proxy = null;
+            request.Timeout = 60;
+            request.ServicePoint.Expect100Continue = false;
+            WebResponse response = request.GetResponse();
+            if (response != null)
+            {
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    string result = reader.ReadToEnd();
+                    dynamic obj = JsonConvert.DeserializeObject(result);
+                    var service = obj._embedded._state[0];
+                    listInfo.Items.Add(DateTime.Now + "--" + service.ctrlstate);
 
                 }
             }
