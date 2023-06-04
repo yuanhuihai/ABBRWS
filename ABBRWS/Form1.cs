@@ -6,6 +6,8 @@ using System.Timers;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 
 namespace ABBRWS
@@ -146,63 +148,27 @@ namespace ABBRWS
         {
             timer1.Stop();
             int ccount = getCCount();//获取当前CCount
-            string url = $"http://127.0.0.1/rw/motionsystem?action=jog";
             string body = "axis1=1000&axis2=0&axis3=0&axis4=0&axis5=0&axis6=0&ccount=" + ccount + "";//此处举例1轴正向运动，速度矢量为1000
-            HttpWebRequest request = (HttpWebRequest) WebRequest.Create(url);
-            request.Method = "POST";
-            request.Credentials = new NetworkCredential("Default User", "robotics");
-            request.CookieContainer = _cookies;
-            request.ContentType = "application/x-www-form-urlencoded";
-            Stream s = request.GetRequestStream();
-            s.Write(Encoding.ASCII.GetBytes(body),0, body.Length);
-            s.Close();
-            using (var httpResponse = (HttpWebResponse)request.GetResponse())
-            {
-            }
+            startAxisMove(body);
             timer1.Start();
-
 
         }
         private void timer2_Tick(object sender, ElapsedEventArgs e)
         {
             timer2.Stop();
             int ccount = getCCount();//获取当前CCount
-            string url = $"http://127.0.0.1/rw/motionsystem?action=jog";
             string body = "axis1=-1000&axis2=0&axis3=0&axis4=0&axis5=0&axis6=0&ccount=" + ccount + "";//此处举例1轴负向运动，速度矢量为-1000
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "POST";
-            request.Credentials = new NetworkCredential("Default User", "robotics");
-            request.CookieContainer = _cookies;
-            request.ContentType = "application/x-www-form-urlencoded";
-            Stream s = request.GetRequestStream();
-            s.Write(Encoding.ASCII.GetBytes(body), 0, body.Length);
-            s.Close();
-            using (var httpResponse = (HttpWebResponse)request.GetResponse())
-            {
-            }
+            startAxisMove(body);
             timer2.Start();
-
-
         }
 
         //2轴
         private void timer3_Tick(object sender, ElapsedEventArgs e)
         {
             timer3.Stop();
-            int ccount = getCCount();//获取当前CCount
-            string url = $"http://127.0.0.1/rw/motionsystem?action=jog";
+            int ccount = getCCount();//获取当前CCount         
             string body = "axis1=0&axis2=1000&axis3=0&axis4=0&axis5=0&axis6=0&ccount=" + ccount + "";//此处举例2轴正向运动，速度矢量为1000
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "POST";
-            request.Credentials = new NetworkCredential("Default User", "robotics");
-            request.CookieContainer = _cookies;
-            request.ContentType = "application/x-www-form-urlencoded";
-            Stream s = request.GetRequestStream();
-            s.Write(Encoding.ASCII.GetBytes(body), 0, body.Length);
-            s.Close();
-            using (var httpResponse = (HttpWebResponse)request.GetResponse())
-            {
-            }
+            startAxisMove(body);
             timer3.Start();
 
 
@@ -211,21 +177,9 @@ namespace ABBRWS
         {
             timer4.Stop();
             int ccount = getCCount();//获取当前CCount
-            string url = $"http://127.0.0.1/rw/motionsystem?action=jog";
             string body = "axis1=0&axis2=-1000&axis3=0&axis4=0&axis5=0&axis6=0&ccount=" + ccount + "";//此处举例1轴负向运动，速度矢量为-1000
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "POST";
-            request.Credentials = new NetworkCredential("Default User", "robotics");
-            request.CookieContainer = _cookies;
-            request.ContentType = "application/x-www-form-urlencoded";
-            Stream s = request.GetRequestStream();
-            s.Write(Encoding.ASCII.GetBytes(body), 0, body.Length);
-            s.Close();
-            using (var httpResponse = (HttpWebResponse)request.GetResponse())
-            {
-            }
+            startAxisMove(body);
             timer4.Start();
-
 
         }
 
@@ -234,42 +188,17 @@ namespace ABBRWS
         {
             timer5.Stop();
             int ccount = getCCount();//获取当前CCount
-            string url = $"http://127.0.0.1/rw/motionsystem?action=jog";
             string body = "axis1=0&axis2=0&axis3=1000&axis4=0&axis5=0&axis6=0&ccount=" + ccount + "";//此处举例3轴正向运动，速度矢量为1000
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "POST";
-            request.Credentials = new NetworkCredential("Default User", "robotics");
-            request.CookieContainer = _cookies;
-            request.ContentType = "application/x-www-form-urlencoded";
-            Stream s = request.GetRequestStream();
-            s.Write(Encoding.ASCII.GetBytes(body), 0, body.Length);
-            s.Close();
-            using (var httpResponse = (HttpWebResponse)request.GetResponse())
-            {
-            }
+            startAxisMove(body);
             timer5.Start();
-
-
         }
         private void timer6_Tick(object sender, ElapsedEventArgs e)
         {
             timer6.Stop();
             int ccount = getCCount();//获取当前CCount
-            string url = $"http://127.0.0.1/rw/motionsystem?action=jog";
             string body = "axis1=0&axis2=0&axis3=-1000&axis4=0&axis5=0&axis6=0&ccount=" + ccount + "";//此处举例3轴负向运动，速度矢量为-1000
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "POST";
-            request.Credentials = new NetworkCredential("Default User", "robotics");
-            request.CookieContainer = _cookies;
-            request.ContentType = "application/x-www-form-urlencoded";
-            Stream s = request.GetRequestStream();
-            s.Write(Encoding.ASCII.GetBytes(body), 0, body.Length);
-            s.Close();
-            using (var httpResponse = (HttpWebResponse)request.GetResponse())
-            {
-            }
+            startAxisMove(body);
             timer6.Start();
-
 
         }
 
@@ -278,19 +207,8 @@ namespace ABBRWS
         {
             timer7.Stop();
             int ccount = getCCount();//获取当前CCount
-            string url = $"http://127.0.0.1/rw/motionsystem?action=jog";
             string body = "axis1=0&axis2=0&axis3=0&axis4=1000&axis5=0&axis6=0&ccount=" + ccount + "";//此处举例4轴正向运动，速度矢量为1000
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "POST";
-            request.Credentials = new NetworkCredential("Default User", "robotics");
-            request.CookieContainer = _cookies;
-            request.ContentType = "application/x-www-form-urlencoded";
-            Stream s = request.GetRequestStream();
-            s.Write(Encoding.ASCII.GetBytes(body), 0, body.Length);
-            s.Close();
-            using (var httpResponse = (HttpWebResponse)request.GetResponse())
-            {
-            }
+            startAxisMove(body);
             timer7.Start();
 
 
@@ -299,19 +217,8 @@ namespace ABBRWS
         {
             timer8.Stop();
             int ccount = getCCount();//获取当前CCount
-            string url = $"http://127.0.0.1/rw/motionsystem?action=jog";
             string body = "axis1=0&axis2=0&axis3=0&axis4=-1000&axis5=0&axis6=0&ccount=" + ccount + "";//此处举例4轴负向运动，速度矢量为-1000
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "POST";
-            request.Credentials = new NetworkCredential("Default User", "robotics");
-            request.CookieContainer = _cookies;
-            request.ContentType = "application/x-www-form-urlencoded";
-            Stream s = request.GetRequestStream();
-            s.Write(Encoding.ASCII.GetBytes(body), 0, body.Length);
-            s.Close();
-            using (var httpResponse = (HttpWebResponse)request.GetResponse())
-            {
-            }
+            startAxisMove(body);
             timer8.Start();
 
 
@@ -322,19 +229,8 @@ namespace ABBRWS
         {
             timer9.Stop();
             int ccount = getCCount();//获取当前CCount
-            string url = $"http://127.0.0.1/rw/motionsystem?action=jog";
             string body = "axis1=0&axis2=0&axis3=0&axis4=0&axis5=1000&axis6=0&ccount=" + ccount + "";//此处举例5轴正向运动，速度矢量为1000
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "POST";
-            request.Credentials = new NetworkCredential("Default User", "robotics");
-            request.CookieContainer = _cookies;
-            request.ContentType = "application/x-www-form-urlencoded";
-            Stream s = request.GetRequestStream();
-            s.Write(Encoding.ASCII.GetBytes(body), 0, body.Length);
-            s.Close();
-            using (var httpResponse = (HttpWebResponse)request.GetResponse())
-            {
-            }
+            startAxisMove(body);
             timer9.Start();
 
 
@@ -343,19 +239,8 @@ namespace ABBRWS
         {
             timer10.Stop();
             int ccount = getCCount();//获取当前CCount
-            string url = $"http://127.0.0.1/rw/motionsystem?action=jog";
             string body = "axis1=0&axis2=0&axis3=0&axis4=0&axis5=-1000&axis6=0&ccount=" + ccount + "";//此处举例5轴负向运动，速度矢量为-1000
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "POST";
-            request.Credentials = new NetworkCredential("Default User", "robotics");
-            request.CookieContainer = _cookies;
-            request.ContentType = "application/x-www-form-urlencoded";
-            Stream s = request.GetRequestStream();
-            s.Write(Encoding.ASCII.GetBytes(body), 0, body.Length);
-            s.Close();
-            using (var httpResponse = (HttpWebResponse)request.GetResponse())
-            {
-            }
+            startAxisMove(body);
             timer10.Start();
 
 
@@ -366,19 +251,8 @@ namespace ABBRWS
         {
             timer11.Stop();
             int ccount = getCCount();//获取当前CCount
-            string url = $"http://127.0.0.1/rw/motionsystem?action=jog";
             string body = "axis1=0&axis2=0&axis3=0&axis4=0&axis5=0&axis6=1000&ccount=" + ccount + "";//此处举例6轴正向运动，速度矢量为1000
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "POST";
-            request.Credentials = new NetworkCredential("Default User", "robotics");
-            request.CookieContainer = _cookies;
-            request.ContentType = "application/x-www-form-urlencoded";
-            Stream s = request.GetRequestStream();
-            s.Write(Encoding.ASCII.GetBytes(body), 0, body.Length);
-            s.Close();
-            using (var httpResponse = (HttpWebResponse)request.GetResponse())
-            {
-            }
+            startAxisMove(body);
             timer11.Start();
 
 
@@ -387,31 +261,21 @@ namespace ABBRWS
         {
             timer12.Stop();
             int ccount = getCCount();//获取当前CCount
-            string url = $"http://127.0.0.1/rw/motionsystem?action=jog";
             string body = "axis1=0&axis2=0&axis3=0&axis4=0&axis5=0&axis6=-1000&ccount=" + ccount + "";//此处举例6轴负向运动，速度矢量为-1000
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "POST";
-            request.Credentials = new NetworkCredential("Default User", "robotics");
-            request.CookieContainer = _cookies;
-            request.ContentType = "application/x-www-form-urlencoded";
-            Stream s = request.GetRequestStream();
-            s.Write(Encoding.ASCII.GetBytes(body), 0, body.Length);
-            s.Close();
-            using (var httpResponse = (HttpWebResponse)request.GetResponse())
-            {
-            }
+            startAxisMove(body);
             timer12.Start();
 
 
         }
 
 
+        //1轴+长按鼠标
         private void jogOneAdd_MouseDown(object sender, MouseEventArgs e)
         {
             this.timer1.Interval = 200;
             this.timer1.Enabled = true;
         }
-
+        //1轴+松开鼠标
         private void jogOneAdd_MouseUp(object sender, MouseEventArgs e)
         {
             this.timer1.Stop();
@@ -436,59 +300,167 @@ namespace ABBRWS
             }
         }
 
+        //1轴-长按鼠标
         private void jogOneMinus_MouseDown(object sender, MouseEventArgs e)
         {
             this.timer2.Interval = 200;
             this.timer2.Enabled = true;
         }
-
+        //1轴-松开鼠标
         private void jogOneMinus_MouseUp(object sender, MouseEventArgs e)
         {
             this.timer2.Stop();
             this.PerformJogStop();
         }
 
+        //2轴+长按鼠标
         private void axisTwoAdd_MouseDown(object sender, MouseEventArgs e)
         {
             this.timer3.Interval = 200;
             this.timer3.Enabled = true;
        
         }
-
+        //2轴+松开鼠标
         private void axisTwoAdd_MouseUp(object sender, MouseEventArgs e)
         {
             this.timer3.Stop();
             this.PerformJogStop();
         }
-
+        //2轴-长按鼠标
         private void axisTwoMinus_MouseDown(object sender, MouseEventArgs e)
         {
             this.timer4.Interval = 200;
             this.timer4.Enabled = true;
         }
-
+        //2轴-松开鼠标
         private void axisTwoMinus_MouseUp(object sender, MouseEventArgs e)
         {
             this.timer4.Stop();
             this.PerformJogStop();
         }
 
+        //3轴+长按鼠标
         private void axisThreeAdd_MouseDown(object sender, MouseEventArgs e)
         {
             this.timer5.Interval = 200;
             this.timer5.Enabled = true;
         }
-
+        //3轴+松开鼠标
         private void axisThreeAdd_MouseUp(object sender, MouseEventArgs e)
         {
             this.timer5.Stop();
             this.PerformJogStop();
         }
 
-     
+        //3轴-长按鼠标
+        private void axisThreeMinus_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.timer6.Interval = 200;
+            this.timer6.Enabled = true;
+        }
+        //3轴-松开鼠标
+        private void axisThreeMinus_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.timer6.Stop();
+            this.PerformJogStop();
+        }
 
-  
+        //4轴+长按鼠标
+        private void axisFourAdd_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.timer7.Interval = 200;
+            this.timer7.Enabled = true;
+        }
+        //4轴+松开鼠标
+        private void axisFourAdd_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.timer7.Stop();
+            this.PerformJogStop();
+        }
+        //4轴-长按鼠标
+        private void axisFourMinus_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.timer8.Interval = 200;
+            this.timer8.Enabled = true;
+        }
+        //4轴-松开鼠标
+        private void axisFourMinus_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.timer8.Stop();
+            this.PerformJogStop();
+        }
+        //5轴+长按鼠标
+        private void axisFiveAdd_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.timer9.Interval = 200;
+            this.timer9.Enabled = true;
+        }
+        //5轴+松开鼠标
+        private void axisFiveAdd_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.timer9.Stop();
+            this.PerformJogStop();
+        }
+        //5轴-长按鼠标
+        private void axisFiveMinus_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.timer10.Interval = 200;
+            this.timer10.Enabled = true;
 
+        }
+        //5轴-松开鼠标
+        private void axisFiveMinus_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.timer10.Stop();
+            this.PerformJogStop();
+        }
+        //6轴+长按鼠标
+        private void axisSixAdd_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.timer11.Interval = 200;
+            this.timer11.Enabled = true;
+        }
+        //6轴+松开鼠标
+        private void axisSixAdd_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.timer11.Stop();
+            this.PerformJogStop();
+        }
+        //6轴-长按鼠标
+        private void axisSixMinus_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.timer12.Interval = 200;
+            this.timer12.Enabled = true;
+        }
+        //6轴-松开鼠标
+        private void axisSixMinus_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.timer12.Stop();
+            this.PerformJogStop();
+        }
+
+
+        //轴关节运动
+        public void startAxisMove(string body)
+        {
+ 
+                string url = $"http://127.0.0.1/rw/motionsystem?action=jog";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                request.Method = "POST";
+                request.Credentials = new NetworkCredential("Default User", "robotics");
+                request.CookieContainer = _cookies;
+                request.ContentType = "application/x-www-form-urlencoded";
+                Stream s = request.GetRequestStream();
+                s.Write(Encoding.ASCII.GetBytes(body), 0, body.Length);
+                s.Close();
+                using (var httpResponse = (HttpWebResponse)request.GetResponse())
+                {
+                }
+           
+        
+        }
+
+        //获取机器人轴坐标
         private void getAxisValue_Click(object sender, EventArgs e)
         {
             string url = "http://127.0.0.1/rw/motionsystem/mechunits/ROB_1/jointtarget?json=1";
@@ -521,5 +493,7 @@ namespace ABBRWS
                 }
             }
         }
+
+
     }
 }

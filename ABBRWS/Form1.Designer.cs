@@ -32,12 +32,12 @@
             this.mShipGet = new System.Windows.Forms.Button();
             this.jogAxisModeSet = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.axisSixMinus = new System.Windows.Forms.Button();
+            this.axisSixAdd = new System.Windows.Forms.Button();
+            this.axisFiveMinus = new System.Windows.Forms.Button();
+            this.axisFiveAdd = new System.Windows.Forms.Button();
+            this.axisFourMinus = new System.Windows.Forms.Button();
+            this.axisFourAdd = new System.Windows.Forms.Button();
             this.axisThreeMinus = new System.Windows.Forms.Button();
             this.axisThreeAdd = new System.Windows.Forms.Button();
             this.axisTwoMinus = new System.Windows.Forms.Button();
@@ -48,12 +48,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.axisOneValue = new System.Windows.Forms.TextBox();
-            this.axisTwoValue = new System.Windows.Forms.TextBox();
-            this.axisThreeValue = new System.Windows.Forms.TextBox();
-            this.axisFourValue = new System.Windows.Forms.TextBox();
-            this.axisFiveValue = new System.Windows.Forms.TextBox();
             this.axisSixValue = new System.Windows.Forms.TextBox();
+            this.axisFiveValue = new System.Windows.Forms.TextBox();
+            this.axisFourValue = new System.Windows.Forms.TextBox();
+            this.axisThreeValue = new System.Windows.Forms.TextBox();
+            this.axisTwoValue = new System.Windows.Forms.TextBox();
+            this.axisOneValue = new System.Windows.Forms.TextBox();
             this.getAxisValue = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -91,12 +91,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button14);
-            this.groupBox1.Controls.Add(this.button15);
-            this.groupBox1.Controls.Add(this.button12);
-            this.groupBox1.Controls.Add(this.button13);
-            this.groupBox1.Controls.Add(this.button10);
-            this.groupBox1.Controls.Add(this.button11);
+            this.groupBox1.Controls.Add(this.axisSixMinus);
+            this.groupBox1.Controls.Add(this.axisSixAdd);
+            this.groupBox1.Controls.Add(this.axisFiveMinus);
+            this.groupBox1.Controls.Add(this.axisFiveAdd);
+            this.groupBox1.Controls.Add(this.axisFourMinus);
+            this.groupBox1.Controls.Add(this.axisFourAdd);
             this.groupBox1.Controls.Add(this.axisThreeMinus);
             this.groupBox1.Controls.Add(this.axisThreeAdd);
             this.groupBox1.Controls.Add(this.axisTwoMinus);
@@ -110,59 +110,71 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "单轴运动";
             // 
-            // button14
+            // axisSixMinus
             // 
-            this.button14.Location = new System.Drawing.Point(123, 174);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 5;
-            this.button14.Text = "6轴 -";
-            this.button14.UseVisualStyleBackColor = true;
+            this.axisSixMinus.Location = new System.Drawing.Point(123, 174);
+            this.axisSixMinus.Name = "axisSixMinus";
+            this.axisSixMinus.Size = new System.Drawing.Size(75, 23);
+            this.axisSixMinus.TabIndex = 5;
+            this.axisSixMinus.Text = "6轴 -";
+            this.axisSixMinus.UseVisualStyleBackColor = true;
+            this.axisSixMinus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.axisSixMinus_MouseDown);
+            this.axisSixMinus.MouseUp += new System.Windows.Forms.MouseEventHandler(this.axisSixMinus_MouseUp);
             // 
-            // button15
+            // axisSixAdd
             // 
-            this.button15.Location = new System.Drawing.Point(29, 174);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 4;
-            this.button15.Text = "6轴 +";
-            this.button15.UseVisualStyleBackColor = true;
+            this.axisSixAdd.Location = new System.Drawing.Point(29, 174);
+            this.axisSixAdd.Name = "axisSixAdd";
+            this.axisSixAdd.Size = new System.Drawing.Size(75, 23);
+            this.axisSixAdd.TabIndex = 4;
+            this.axisSixAdd.Text = "6轴 +";
+            this.axisSixAdd.UseVisualStyleBackColor = true;
+            this.axisSixAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.axisSixAdd_MouseDown);
+            this.axisSixAdd.MouseUp += new System.Windows.Forms.MouseEventHandler(this.axisSixAdd_MouseUp);
             // 
-            // button12
+            // axisFiveMinus
             // 
-            this.button12.Location = new System.Drawing.Point(123, 145);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 9;
-            this.button12.Text = "5轴 -";
-            this.button12.UseVisualStyleBackColor = true;
+            this.axisFiveMinus.Location = new System.Drawing.Point(123, 145);
+            this.axisFiveMinus.Name = "axisFiveMinus";
+            this.axisFiveMinus.Size = new System.Drawing.Size(75, 23);
+            this.axisFiveMinus.TabIndex = 9;
+            this.axisFiveMinus.Text = "5轴 -";
+            this.axisFiveMinus.UseVisualStyleBackColor = true;
+            this.axisFiveMinus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.axisFiveMinus_MouseDown);
+            this.axisFiveMinus.MouseUp += new System.Windows.Forms.MouseEventHandler(this.axisFiveMinus_MouseUp);
             // 
-            // button13
+            // axisFiveAdd
             // 
-            this.button13.Location = new System.Drawing.Point(29, 145);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 8;
-            this.button13.Text = "5轴 +";
-            this.button13.UseVisualStyleBackColor = true;
+            this.axisFiveAdd.Location = new System.Drawing.Point(29, 145);
+            this.axisFiveAdd.Name = "axisFiveAdd";
+            this.axisFiveAdd.Size = new System.Drawing.Size(75, 23);
+            this.axisFiveAdd.TabIndex = 8;
+            this.axisFiveAdd.Text = "5轴 +";
+            this.axisFiveAdd.UseVisualStyleBackColor = true;
+            this.axisFiveAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.axisFiveAdd_MouseDown);
+            this.axisFiveAdd.MouseUp += new System.Windows.Forms.MouseEventHandler(this.axisFiveAdd_MouseUp);
             // 
-            // button10
+            // axisFourMinus
             // 
-            this.button10.Location = new System.Drawing.Point(123, 116);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 7;
-            this.button10.Text = "4轴 -";
-            this.button10.UseVisualStyleBackColor = true;
+            this.axisFourMinus.Location = new System.Drawing.Point(123, 116);
+            this.axisFourMinus.Name = "axisFourMinus";
+            this.axisFourMinus.Size = new System.Drawing.Size(75, 23);
+            this.axisFourMinus.TabIndex = 7;
+            this.axisFourMinus.Text = "4轴 -";
+            this.axisFourMinus.UseVisualStyleBackColor = true;
+            this.axisFourMinus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.axisFourMinus_MouseDown);
+            this.axisFourMinus.MouseUp += new System.Windows.Forms.MouseEventHandler(this.axisFourMinus_MouseUp);
             // 
-            // button11
+            // axisFourAdd
             // 
-            this.button11.Location = new System.Drawing.Point(29, 116);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 23);
-            this.button11.TabIndex = 6;
-            this.button11.Text = "4轴 +";
-            this.button11.UseVisualStyleBackColor = true;
+            this.axisFourAdd.Location = new System.Drawing.Point(29, 116);
+            this.axisFourAdd.Name = "axisFourAdd";
+            this.axisFourAdd.Size = new System.Drawing.Size(75, 23);
+            this.axisFourAdd.TabIndex = 6;
+            this.axisFourAdd.Text = "4轴 +";
+            this.axisFourAdd.UseVisualStyleBackColor = true;
+            this.axisFourAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.axisFourAdd_MouseDown);
+            this.axisFourAdd.MouseUp += new System.Windows.Forms.MouseEventHandler(this.axisFourAdd_MouseUp);
             // 
             // axisThreeMinus
             // 
@@ -172,6 +184,8 @@
             this.axisThreeMinus.TabIndex = 5;
             this.axisThreeMinus.Text = "3轴 -";
             this.axisThreeMinus.UseVisualStyleBackColor = true;
+            this.axisThreeMinus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.axisThreeMinus_MouseDown);
+            this.axisThreeMinus.MouseUp += new System.Windows.Forms.MouseEventHandler(this.axisThreeMinus_MouseUp);
             // 
             // axisThreeAdd
             // 
@@ -270,33 +284,12 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "轴角度";
             // 
-            // axisOneValue
+            // axisSixValue
             // 
-            this.axisOneValue.Location = new System.Drawing.Point(6, 31);
-            this.axisOneValue.Name = "axisOneValue";
-            this.axisOneValue.Size = new System.Drawing.Size(74, 21);
-            this.axisOneValue.TabIndex = 0;
-            // 
-            // axisTwoValue
-            // 
-            this.axisTwoValue.Location = new System.Drawing.Point(6, 60);
-            this.axisTwoValue.Name = "axisTwoValue";
-            this.axisTwoValue.Size = new System.Drawing.Size(74, 21);
-            this.axisTwoValue.TabIndex = 1;
-            // 
-            // axisThreeValue
-            // 
-            this.axisThreeValue.Location = new System.Drawing.Point(6, 89);
-            this.axisThreeValue.Name = "axisThreeValue";
-            this.axisThreeValue.Size = new System.Drawing.Size(74, 21);
-            this.axisThreeValue.TabIndex = 2;
-            // 
-            // axisFourValue
-            // 
-            this.axisFourValue.Location = new System.Drawing.Point(6, 118);
-            this.axisFourValue.Name = "axisFourValue";
-            this.axisFourValue.Size = new System.Drawing.Size(74, 21);
-            this.axisFourValue.TabIndex = 3;
+            this.axisSixValue.Location = new System.Drawing.Point(6, 176);
+            this.axisSixValue.Name = "axisSixValue";
+            this.axisSixValue.Size = new System.Drawing.Size(74, 21);
+            this.axisSixValue.TabIndex = 9;
             // 
             // axisFiveValue
             // 
@@ -305,12 +298,33 @@
             this.axisFiveValue.Size = new System.Drawing.Size(74, 21);
             this.axisFiveValue.TabIndex = 9;
             // 
-            // axisSixValue
+            // axisFourValue
             // 
-            this.axisSixValue.Location = new System.Drawing.Point(6, 176);
-            this.axisSixValue.Name = "axisSixValue";
-            this.axisSixValue.Size = new System.Drawing.Size(74, 21);
-            this.axisSixValue.TabIndex = 9;
+            this.axisFourValue.Location = new System.Drawing.Point(6, 118);
+            this.axisFourValue.Name = "axisFourValue";
+            this.axisFourValue.Size = new System.Drawing.Size(74, 21);
+            this.axisFourValue.TabIndex = 3;
+            // 
+            // axisThreeValue
+            // 
+            this.axisThreeValue.Location = new System.Drawing.Point(6, 89);
+            this.axisThreeValue.Name = "axisThreeValue";
+            this.axisThreeValue.Size = new System.Drawing.Size(74, 21);
+            this.axisThreeValue.TabIndex = 2;
+            // 
+            // axisTwoValue
+            // 
+            this.axisTwoValue.Location = new System.Drawing.Point(6, 60);
+            this.axisTwoValue.Name = "axisTwoValue";
+            this.axisTwoValue.Size = new System.Drawing.Size(74, 21);
+            this.axisTwoValue.TabIndex = 1;
+            // 
+            // axisOneValue
+            // 
+            this.axisOneValue.Location = new System.Drawing.Point(6, 31);
+            this.axisOneValue.Name = "axisOneValue";
+            this.axisOneValue.Size = new System.Drawing.Size(74, 21);
+            this.axisOneValue.TabIndex = 0;
             // 
             // getAxisValue
             // 
@@ -352,12 +366,12 @@
         private System.Windows.Forms.Button mShipGet;
         private System.Windows.Forms.Button jogAxisModeSet;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button axisSixMinus;
+        private System.Windows.Forms.Button axisSixAdd;
+        private System.Windows.Forms.Button axisFiveMinus;
+        private System.Windows.Forms.Button axisFiveAdd;
+        private System.Windows.Forms.Button axisFourMinus;
+        private System.Windows.Forms.Button axisFourAdd;
         private System.Windows.Forms.Button axisThreeMinus;
         private System.Windows.Forms.Button axisThreeAdd;
         private System.Windows.Forms.Button axisTwoMinus;
