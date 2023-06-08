@@ -59,9 +59,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.listInfo = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.speedRatio = new System.Windows.Forms.Button();
-            this.opMode = new System.Windows.Forms.Button();
             this.motorStatus = new System.Windows.Forms.Button();
+            this.opMode = new System.Windows.Forms.Button();
+            this.speedRatio = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -382,15 +383,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "机器人状态";
             // 
-            // speedRatio
+            // motorStatus
             // 
-            this.speedRatio.Location = new System.Drawing.Point(6, 31);
-            this.speedRatio.Name = "speedRatio";
-            this.speedRatio.Size = new System.Drawing.Size(75, 23);
-            this.speedRatio.TabIndex = 14;
-            this.speedRatio.Text = "速度百分比";
-            this.speedRatio.UseVisualStyleBackColor = true;
-            this.speedRatio.Click += new System.EventHandler(this.speedRatio_Click);
+            this.motorStatus.Location = new System.Drawing.Point(6, 89);
+            this.motorStatus.Name = "motorStatus";
+            this.motorStatus.Size = new System.Drawing.Size(75, 23);
+            this.motorStatus.TabIndex = 16;
+            this.motorStatus.Text = "电机状态";
+            this.motorStatus.UseVisualStyleBackColor = true;
+            this.motorStatus.Click += new System.EventHandler(this.motorStatus_Click);
             // 
             // opMode
             // 
@@ -402,21 +403,31 @@
             this.opMode.UseVisualStyleBackColor = true;
             this.opMode.Click += new System.EventHandler(this.opMode_Click);
             // 
-            // motorStatus
+            // speedRatio
             // 
-            this.motorStatus.Location = new System.Drawing.Point(6, 89);
-            this.motorStatus.Name = "motorStatus";
-            this.motorStatus.Size = new System.Drawing.Size(75, 23);
-            this.motorStatus.TabIndex = 16;
-            this.motorStatus.Text = "电机状态";
-            this.motorStatus.UseVisualStyleBackColor = true;
-            this.motorStatus.Click += new System.EventHandler(this.motorStatus_Click);
+            this.speedRatio.Location = new System.Drawing.Point(6, 31);
+            this.speedRatio.Name = "speedRatio";
+            this.speedRatio.Size = new System.Drawing.Size(75, 23);
+            this.speedRatio.TabIndex = 14;
+            this.speedRatio.Text = "速度百分比";
+            this.speedRatio.UseVisualStyleBackColor = true;
+            this.speedRatio.Click += new System.EventHandler(this.speedRatio_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Location = new System.Drawing.Point(269, 331);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(239, 129);
+            this.groupBox4.TabIndex = 14;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "直线运动";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 558);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.listInfo);
             this.Controls.Add(this.label3);
@@ -477,6 +488,7 @@
         private System.Windows.Forms.Button motorStatus;
         private System.Windows.Forms.Button opMode;
         private System.Windows.Forms.Button speedRatio;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }
 
