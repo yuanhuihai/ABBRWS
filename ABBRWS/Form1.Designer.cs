@@ -57,20 +57,30 @@
             this.getAxisValue = new System.Windows.Forms.Button();
             this.robotIp = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.listInfo = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.motorStatus = new System.Windows.Forms.Button();
             this.opMode = new System.Windows.Forms.Button();
             this.speedRatio = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.speedRatioValue = new System.Windows.Forms.TextBox();
+            this.opModeValue = new System.Windows.Forms.TextBox();
+            this.motorStatusValue = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // LocalRegist
             // 
-            this.LocalRegist.Location = new System.Drawing.Point(113, 125);
+            this.LocalRegist.Location = new System.Drawing.Point(82, 38);
             this.LocalRegist.Name = "LocalRegist";
             this.LocalRegist.Size = new System.Drawing.Size(116, 23);
             this.LocalRegist.TabIndex = 0;
@@ -80,7 +90,7 @@
             // 
             // mShipGet
             // 
-            this.mShipGet.Location = new System.Drawing.Point(113, 174);
+            this.mShipGet.Location = new System.Drawing.Point(82, 87);
             this.mShipGet.Name = "mShipGet";
             this.mShipGet.Size = new System.Drawing.Size(116, 23);
             this.mShipGet.TabIndex = 1;
@@ -90,7 +100,7 @@
             // 
             // jogAxisModeSet
             // 
-            this.jogAxisModeSet.Location = new System.Drawing.Point(113, 222);
+            this.jogAxisModeSet.Location = new System.Drawing.Point(82, 135);
             this.jogAxisModeSet.Name = "jogAxisModeSet";
             this.jogAxisModeSet.Size = new System.Drawing.Size(116, 23);
             this.jogAxisModeSet.TabIndex = 2;
@@ -112,7 +122,7 @@
             this.groupBox1.Controls.Add(this.axisTwoAdd);
             this.groupBox1.Controls.Add(this.jogOneMinus);
             this.groupBox1.Controls.Add(this.jogOneAdd);
-            this.groupBox1.Location = new System.Drawing.Point(269, 48);
+            this.groupBox1.Location = new System.Drawing.Point(245, 29);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(225, 208);
             this.groupBox1.TabIndex = 3;
@@ -254,7 +264,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 130);
+            this.label1.Location = new System.Drawing.Point(17, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 12);
             this.label1.TabIndex = 4;
@@ -263,7 +273,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 179);
+            this.label2.Location = new System.Drawing.Point(17, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 12);
             this.label2.TabIndex = 5;
@@ -272,7 +282,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 227);
+            this.label4.Location = new System.Drawing.Point(17, 140);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 12);
             this.label4.TabIndex = 7;
@@ -286,7 +296,7 @@
             this.groupBox2.Controls.Add(this.axisThreeValue);
             this.groupBox2.Controls.Add(this.axisTwoValue);
             this.groupBox2.Controls.Add(this.axisOneValue);
-            this.groupBox2.Location = new System.Drawing.Point(512, 48);
+            this.groupBox2.Location = new System.Drawing.Point(25, 15);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(100, 208);
             this.groupBox2.TabIndex = 8;
@@ -337,7 +347,7 @@
             // 
             // getAxisValue
             // 
-            this.getAxisValue.Location = new System.Drawing.Point(517, 262);
+            this.getAxisValue.Location = new System.Drawing.Point(143, 15);
             this.getAxisValue.Name = "getAxisValue";
             this.getAxisValue.Size = new System.Drawing.Size(75, 23);
             this.getAxisValue.TabIndex = 9;
@@ -347,7 +357,7 @@
             // 
             // robotIp
             // 
-            this.robotIp.Location = new System.Drawing.Point(113, 58);
+            this.robotIp.Location = new System.Drawing.Point(83, 15);
             this.robotIp.Name = "robotIp";
             this.robotIp.Size = new System.Drawing.Size(116, 21);
             this.robotIp.TabIndex = 10;
@@ -356,27 +366,21 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 61);
+            this.label3.Location = new System.Drawing.Point(12, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 12);
             this.label3.TabIndex = 11;
             this.label3.Text = "机器人IP：";
             // 
-            // listInfo
-            // 
-            this.listInfo.FormattingEnabled = true;
-            this.listInfo.ItemHeight = 12;
-            this.listInfo.Location = new System.Drawing.Point(660, 48);
-            this.listInfo.Name = "listInfo";
-            this.listInfo.Size = new System.Drawing.Size(290, 208);
-            this.listInfo.TabIndex = 12;
-            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.motorStatusValue);
+            this.groupBox3.Controls.Add(this.opModeValue);
+            this.groupBox3.Controls.Add(this.speedRatioValue);
             this.groupBox3.Controls.Add(this.motorStatus);
             this.groupBox3.Controls.Add(this.opMode);
             this.groupBox3.Controls.Add(this.speedRatio);
-            this.groupBox3.Location = new System.Drawing.Point(50, 331);
+            this.groupBox3.Location = new System.Drawing.Point(14, 70);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(179, 129);
             this.groupBox3.TabIndex = 13;
@@ -413,42 +417,109 @@
             this.speedRatio.UseVisualStyleBackColor = true;
             this.speedRatio.Click += new System.EventHandler(this.speedRatio_Click);
             // 
-            // groupBox4
+            // tabControl1
             // 
-            this.groupBox4.Location = new System.Drawing.Point(269, 331);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(239, 129);
-            this.groupBox4.TabIndex = 14;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "直线运动";
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(12, 11);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(727, 469);
+            this.tabControl1.TabIndex = 15;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.robotIp);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(719, 443);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "连接机器人";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.mShipGet);
+            this.tabPage2.Controls.Add(this.LocalRegist);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.jogAxisModeSet);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(719, 443);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "单轴运动";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox2);
+            this.tabPage3.Controls.Add(this.getAxisValue);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(719, 443);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "轴角度";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // speedRatioValue
+            // 
+            this.speedRatioValue.Location = new System.Drawing.Point(87, 31);
+            this.speedRatioValue.Name = "speedRatioValue";
+            this.speedRatioValue.Size = new System.Drawing.Size(86, 21);
+            this.speedRatioValue.TabIndex = 17;
+            // 
+            // opModeValue
+            // 
+            this.opModeValue.Location = new System.Drawing.Point(87, 62);
+            this.opModeValue.Name = "opModeValue";
+            this.opModeValue.Size = new System.Drawing.Size(86, 21);
+            this.opModeValue.TabIndex = 18;
+            // 
+            // motorStatusValue
+            // 
+            this.motorStatusValue.Location = new System.Drawing.Point(87, 91);
+            this.motorStatusValue.Name = "motorStatusValue";
+            this.motorStatusValue.Size = new System.Drawing.Size(86, 21);
+            this.motorStatusValue.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 407);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(245, 12);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "1-机器人手动模式，并且motor ON才可以控制";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1023, 558);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.listInfo);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.robotIp);
-            this.Controls.Add(this.getAxisValue);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.jogAxisModeSet);
-            this.Controls.Add(this.mShipGet);
-            this.Controls.Add(this.LocalRegist);
+            this.ClientSize = new System.Drawing.Size(767, 492);
+            this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "  C#基于robot web servcie和ABB机器人通讯";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -483,12 +554,18 @@
         private System.Windows.Forms.Button getAxisValue;
         private System.Windows.Forms.TextBox robotIp;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox listInfo;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button motorStatus;
         private System.Windows.Forms.Button opMode;
         private System.Windows.Forms.Button speedRatio;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TextBox motorStatusValue;
+        private System.Windows.Forms.TextBox opModeValue;
+        private System.Windows.Forms.TextBox speedRatioValue;
+        private System.Windows.Forms.Label label5;
     }
 }
 

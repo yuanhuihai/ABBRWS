@@ -15,17 +15,7 @@ namespace ABBRWS
     {
 
         private System.Timers.Timer timer1 = new System.Timers.Timer();
-        private System.Timers.Timer timer2 = new System.Timers.Timer();
-        private System.Timers.Timer timer3 = new System.Timers.Timer();
-        private System.Timers.Timer timer4 = new System.Timers.Timer();
-        private System.Timers.Timer timer5 = new System.Timers.Timer();
-        private System.Timers.Timer timer6 = new System.Timers.Timer();
-        private System.Timers.Timer timer7 = new System.Timers.Timer();
-        private System.Timers.Timer timer8 = new System.Timers.Timer();
-        private System.Timers.Timer timer9 = new System.Timers.Timer();
-        private System.Timers.Timer timer10 = new System.Timers.Timer();
-        private System.Timers.Timer timer11 = new System.Timers.Timer();
-        private System.Timers.Timer timer12 = new System.Timers.Timer();
+
 
 
         private CookieContainer _cookies = new CookieContainer();
@@ -58,7 +48,7 @@ namespace ABBRWS
             {
                 if (a.StatusCode == HttpStatusCode.Created)
                 {
-                    listInfo.Items.Add(System.DateTime.Now+"--本地注册成功!");
+           
                     LocalRegist.BackColor = Color.Green;
                 }
 
@@ -79,7 +69,7 @@ namespace ABBRWS
             using (var httpResponse = (HttpWebResponse)request.GetResponse())
                 if (httpResponse.StatusCode == HttpStatusCode.NoContent)
                 {
-                    listInfo.Items.Add(System.DateTime.Now + "--请求控制权限成功!");
+                 
                     mShipGet.BackColor = Color.Green;
                 }
 
@@ -96,9 +86,8 @@ namespace ABBRWS
             request.Credentials = new NetworkCredential("Default User", "robotics");
             request.CookieContainer = _cookies;
             request.ContentType = "application/x-www-form-urlencoded";
-
             Stream s = request.GetRequestStream();
-            s.Write(Encoding.ASCII.GetBytes(body), 0, body.Length);
+            s.Write(Encoding.ASCII.GetBytes(body), 0, body.Length);//向数据流中写入body 内容
             s.Close();
             using (var httpResponse = (HttpWebResponse)request.GetResponse())
             {
@@ -106,7 +95,7 @@ namespace ABBRWS
                 {
                    
                    jogAxisModeSet.BackColor = Color.Green;
-                    listInfo.Items.Add(System.DateTime.Now + "--设置单轴模式!");
+             
                 }
             }
         }
@@ -392,8 +381,7 @@ namespace ABBRWS
                     string result = reader.ReadToEnd();
                     dynamic obj = JsonConvert.DeserializeObject(result);
                     var service = obj._embedded._state[0];
-
-                    listInfo.Items.Add(DateTime.Now + "--" + service.speedratio);
+                   speedRatioValue.Text=service.speedratio;
 
                 }
             }
@@ -421,8 +409,7 @@ namespace ABBRWS
                     string result = reader.ReadToEnd();
                     dynamic obj = JsonConvert.DeserializeObject(result);
                     var service = obj._embedded._state[0];
-               
-                    listInfo.Items.Add(DateTime.Now + "--" + service.opmode);
+                    opModeValue.Text=service.opmode;
 
                 }
             }
@@ -450,7 +437,7 @@ namespace ABBRWS
                     string result = reader.ReadToEnd();
                     dynamic obj = JsonConvert.DeserializeObject(result);
                     var service = obj._embedded._state[0];
-                    listInfo.Items.Add(DateTime.Now + "--" + service.ctrlstate);
+                    motorStatusValue.Text=service.ctrlstate;
 
                 }
             }
