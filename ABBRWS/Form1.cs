@@ -30,7 +30,7 @@ namespace ABBRWS
             InitializeComponent();
         }
 
-
+        //20230623 本地注册
         private void LocalRegist_Click(object sender, EventArgs e)
         {
 
@@ -56,6 +56,7 @@ namespace ABBRWS
 
         }
 
+        //获取控制权 20230623
         private void mShipGet_Click(object sender, EventArgs e)
         {
             string url = $"http://" + robotIp.Text + "/rw/mastership/motion?action=request";//请求权限URL
@@ -75,9 +76,12 @@ namespace ABBRWS
 
         }
 
+        //设置单轴模式 20230623
         private void jogAxisModeSet_Click(object sender, EventArgs e)
         {
             string url = $"http://"+robotIp.Text+"/rw/motionsystem/mechunits/ROB_1?action=set&continue-on-en=1";
+       
+
             string body = "jog-mode=AxisGroup1";
             //运动模式为单轴运动
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -100,6 +104,7 @@ namespace ABBRWS
             }
         }
 
+        //获取轴计数 20230623
         private int getCCount()
         {
             string url = $"http://" + robotIp.Text + "/rw/motionsystem?resource=change-count&json=1";
@@ -143,7 +148,7 @@ namespace ABBRWS
 
 
 
-
+        //jog停止 20230623
         public void PerformJogStop()
         {
             string url=$"http://" + robotIp.Text + "/rw/motionsystem?action=jog";
@@ -323,6 +328,7 @@ namespace ABBRWS
         
         }
 
+
         //获取机器人轴坐标
         private void getAxisValue_Click(object sender, EventArgs e)
         {
@@ -357,8 +363,43 @@ namespace ABBRWS
             }
         }
 
-     
+        //20230623 获取机器人坐标
+        private void getAxisCord_Click(object sender, EventArgs e)
+        {
+            string url = "http://" + robotIp.Text + "/rw/motionsystem/mechunits/ROB_1/robtarget?json=1";
+            string username = "Default User";
+            string password = "robotics";
 
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";
+            request.Credentials = new NetworkCredential(username, password);
+            request.CookieContainer = _cookies;
+            request.PreAuthenticate = true;
+            request.Proxy = null;
+            request.Timeout = 60;
+            request.ServicePoint.Expect100Continue = false;
+            WebResponse response = request.GetResponse();
+            if (response != null)
+            {
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    string result = reader.ReadToEnd();
+                    dynamic obj = JsonConvert.DeserializeObject(result);
+                    var service = obj._embedded._state[0];
+                    richTextCord.Text += "x:" + service.x+"\r\n";
+                    richTextCord.Text += "y:" + service.y + "\r\n";
+                    richTextCord.Text += "z:" + service.z + "\r\n";
+                    richTextCord.Text += "q1:" + service.q1 + "\r\n";
+                    richTextCord.Text += "q2:" + service.q2 + "\r\n";
+                    richTextCord.Text += "q3:" + service.q3 + "\r\n";
+                }
+            }
+
+        }
+
+
+
+        //获取机器人速度20230623
         private void speedRatio_Click(object sender, EventArgs e)
         {
             string url = "http://" + robotIp.Text + "/rw/panel/speedratio?json=1";
@@ -387,6 +428,9 @@ namespace ABBRWS
             }
         }
 
+    
+
+        //获取操作模式20230623
         private void opMode_Click(object sender, EventArgs e)
         {
             string url = "http://" + robotIp.Text + "/rw/panel/opmode?json=1";
@@ -415,6 +459,9 @@ namespace ABBRWS
             }
         }
 
+      
+
+        //马达状态 20230623
         private void motorStatus_Click(object sender, EventArgs e)
         {
             string url = "http://" + robotIp.Text + "/rw/panel/ctrlstate?json=1";
@@ -443,12 +490,14 @@ namespace ABBRWS
             }
         }
 
+        //鼠标按下 20230623
         private void btn_MouseDown()
         {
             this.timer1.Interval = 200;
             this.timer1.Enabled = true;
         }
 
+        //鼠标松开 20230623
         private void btn_MouseUp()
         {
             J1 = 0;
@@ -461,5 +510,103 @@ namespace ABBRWS
             this.PerformJogStop();
         }
 
+
+        //20230623 获取变量的值
+        private void readVar_Click(object sender, EventArgs e)
+        {
+            string url = "http://" + robotIp.Text + "/rw/rapid/symbol/data/RAPID/T_ROB1/Module1/"+varName.Text+"?json=1";
+            string username = "Default User";
+            string password = "robotics";
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";
+            request.Credentials = new NetworkCredential(username, password);
+            request.CookieContainer = _cookies;
+            request.PreAuthenticate = true;
+            request.Proxy = null;
+            request.Timeout = 60;
+            request.ServicePoint.Expect100Continue = false;
+            WebResponse response = request.GetResponse();
+            if (response != null)
+            {
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    string result = reader.ReadToEnd();
+                    dynamic obj = JsonConvert.DeserializeObject(result);
+                    var service = obj._embedded._state[0];
+                    varValue.Text = service.value;
+                 
+
+                }
+            }
+        }
+
+        //获取运行程序 20230623
+        private void getPro_Click(object sender, EventArgs e)
+        {
+            string url = "http://" + robotIp.Text + "/rw/rapid/modules?task=T_ROB1&json=1";
+            string username = "Default User";
+            string password = "robotics";
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";
+            request.Credentials = new NetworkCredential(username, password);
+            request.CookieContainer = _cookies;
+            request.PreAuthenticate = true;
+            request.Proxy = null;
+            request.Timeout = 60;
+            request.ServicePoint.Expect100Continue = false;
+            WebResponse response = request.GetResponse();
+            if (response != null)
+            {
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    string result = reader.ReadToEnd();
+                    dynamic obj = JsonConvert.DeserializeObject(result);
+
+                    for(int i = 0; i< 3; i++) //这里我知道数组只有3个，所以用了小于3，将来如何获取module的数量信息？
+                    {
+                        
+                        listBoxPro.Items.Add(obj._embedded._state[i].name);
+                    }
+                   
+                
+
+
+                }
+            }
+        }
+
+        //获取任务 20230623
+        private void getTask_Click(object sender, EventArgs e)
+        {
+            string url = "http://" + robotIp.Text + "/rw/rapid/tasks?json=1";
+            string username = "Default User";
+            string password = "robotics";
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "GET";
+            request.Credentials = new NetworkCredential(username, password);
+            request.CookieContainer = _cookies;
+            request.PreAuthenticate = true;
+            request.Proxy = null;
+            request.Timeout = 60;
+            request.ServicePoint.Expect100Continue = false;
+            WebResponse response = request.GetResponse();
+            if (response != null)
+            {
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    string result = reader.ReadToEnd();
+                    dynamic obj = JsonConvert.DeserializeObject(result);
+                    var service = obj._embedded._state[0];
+           
+                    listBoxTask.Items.Add(service.name);
+
+
+                }
+            }
+
+        }
     }
 }

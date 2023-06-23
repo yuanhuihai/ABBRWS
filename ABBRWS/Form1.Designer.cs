@@ -58,17 +58,31 @@
             this.robotIp = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.motorStatusValue = new System.Windows.Forms.TextBox();
+            this.opModeValue = new System.Windows.Forms.TextBox();
+            this.speedRatioValue = new System.Windows.Forms.TextBox();
             this.motorStatus = new System.Windows.Forms.Button();
             this.opMode = new System.Windows.Forms.Button();
             this.speedRatio = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.speedRatioValue = new System.Windows.Forms.TextBox();
-            this.opModeValue = new System.Windows.Forms.TextBox();
-            this.motorStatusValue = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.varValue = new System.Windows.Forms.TextBox();
+            this.readVar = new System.Windows.Forms.Button();
+            this.varName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.getTask = new System.Windows.Forms.Button();
+            this.listBoxTask = new System.Windows.Forms.ListBox();
+            this.getPro = new System.Windows.Forms.Button();
+            this.listBoxPro = new System.Windows.Forms.ListBox();
+            this.getAxisCord = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.richTextCord = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -76,6 +90,9 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // LocalRegist
@@ -293,61 +310,62 @@
             this.groupBox2.Controls.Add(this.axisSixValue);
             this.groupBox2.Controls.Add(this.axisFiveValue);
             this.groupBox2.Controls.Add(this.axisFourValue);
+            this.groupBox2.Controls.Add(this.getAxisValue);
             this.groupBox2.Controls.Add(this.axisThreeValue);
             this.groupBox2.Controls.Add(this.axisTwoValue);
             this.groupBox2.Controls.Add(this.axisOneValue);
-            this.groupBox2.Location = new System.Drawing.Point(25, 15);
+            this.groupBox2.Location = new System.Drawing.Point(14, 20);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(100, 208);
+            this.groupBox2.Size = new System.Drawing.Size(123, 232);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "轴角度";
             // 
             // axisSixValue
             // 
-            this.axisSixValue.Location = new System.Drawing.Point(6, 176);
+            this.axisSixValue.Location = new System.Drawing.Point(35, 197);
             this.axisSixValue.Name = "axisSixValue";
             this.axisSixValue.Size = new System.Drawing.Size(74, 21);
             this.axisSixValue.TabIndex = 9;
             // 
             // axisFiveValue
             // 
-            this.axisFiveValue.Location = new System.Drawing.Point(6, 147);
+            this.axisFiveValue.Location = new System.Drawing.Point(35, 168);
             this.axisFiveValue.Name = "axisFiveValue";
             this.axisFiveValue.Size = new System.Drawing.Size(74, 21);
             this.axisFiveValue.TabIndex = 9;
             // 
             // axisFourValue
             // 
-            this.axisFourValue.Location = new System.Drawing.Point(6, 118);
+            this.axisFourValue.Location = new System.Drawing.Point(35, 139);
             this.axisFourValue.Name = "axisFourValue";
             this.axisFourValue.Size = new System.Drawing.Size(74, 21);
             this.axisFourValue.TabIndex = 3;
             // 
             // axisThreeValue
             // 
-            this.axisThreeValue.Location = new System.Drawing.Point(6, 89);
+            this.axisThreeValue.Location = new System.Drawing.Point(35, 110);
             this.axisThreeValue.Name = "axisThreeValue";
             this.axisThreeValue.Size = new System.Drawing.Size(74, 21);
             this.axisThreeValue.TabIndex = 2;
             // 
             // axisTwoValue
             // 
-            this.axisTwoValue.Location = new System.Drawing.Point(6, 60);
+            this.axisTwoValue.Location = new System.Drawing.Point(35, 81);
             this.axisTwoValue.Name = "axisTwoValue";
             this.axisTwoValue.Size = new System.Drawing.Size(74, 21);
             this.axisTwoValue.TabIndex = 1;
             // 
             // axisOneValue
             // 
-            this.axisOneValue.Location = new System.Drawing.Point(6, 31);
+            this.axisOneValue.Location = new System.Drawing.Point(35, 52);
             this.axisOneValue.Name = "axisOneValue";
             this.axisOneValue.Size = new System.Drawing.Size(74, 21);
             this.axisOneValue.TabIndex = 0;
             // 
             // getAxisValue
             // 
-            this.getAxisValue.Location = new System.Drawing.Point(143, 15);
+            this.getAxisValue.Location = new System.Drawing.Point(34, 23);
             this.getAxisValue.Name = "getAxisValue";
             this.getAxisValue.Size = new System.Drawing.Size(75, 23);
             this.getAxisValue.TabIndex = 9;
@@ -387,6 +405,27 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "机器人状态";
             // 
+            // motorStatusValue
+            // 
+            this.motorStatusValue.Location = new System.Drawing.Point(87, 91);
+            this.motorStatusValue.Name = "motorStatusValue";
+            this.motorStatusValue.Size = new System.Drawing.Size(86, 21);
+            this.motorStatusValue.TabIndex = 19;
+            // 
+            // opModeValue
+            // 
+            this.opModeValue.Location = new System.Drawing.Point(87, 62);
+            this.opModeValue.Name = "opModeValue";
+            this.opModeValue.Size = new System.Drawing.Size(86, 21);
+            this.opModeValue.TabIndex = 18;
+            // 
+            // speedRatioValue
+            // 
+            this.speedRatioValue.Location = new System.Drawing.Point(87, 31);
+            this.speedRatioValue.Name = "speedRatioValue";
+            this.speedRatioValue.Size = new System.Drawing.Size(86, 21);
+            this.speedRatioValue.TabIndex = 17;
+            // 
             // motorStatus
             // 
             this.motorStatus.Location = new System.Drawing.Point(6, 89);
@@ -422,6 +461,8 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(12, 11);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -459,38 +500,6 @@
             this.tabPage2.Text = "单轴运动";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.groupBox2);
-            this.tabPage3.Controls.Add(this.getAxisValue);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(719, 443);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "轴角度";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // speedRatioValue
-            // 
-            this.speedRatioValue.Location = new System.Drawing.Point(87, 31);
-            this.speedRatioValue.Name = "speedRatioValue";
-            this.speedRatioValue.Size = new System.Drawing.Size(86, 21);
-            this.speedRatioValue.TabIndex = 17;
-            // 
-            // opModeValue
-            // 
-            this.opModeValue.Location = new System.Drawing.Point(87, 62);
-            this.opModeValue.Name = "opModeValue";
-            this.opModeValue.Size = new System.Drawing.Size(86, 21);
-            this.opModeValue.TabIndex = 18;
-            // 
-            // motorStatusValue
-            // 
-            this.motorStatusValue.Location = new System.Drawing.Point(87, 91);
-            this.motorStatusValue.Name = "motorStatusValue";
-            this.motorStatusValue.Size = new System.Drawing.Size(86, 21);
-            this.motorStatusValue.TabIndex = 19;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -499,6 +508,154 @@
             this.label5.Size = new System.Drawing.Size(245, 12);
             this.label5.TabIndex = 8;
             this.label5.Text = "1-机器人手动模式，并且motor ON才可以控制";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox4);
+            this.tabPage3.Controls.Add(this.groupBox2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(719, 443);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "轴角度";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.label7);
+            this.tabPage4.Controls.Add(this.varValue);
+            this.tabPage4.Controls.Add(this.readVar);
+            this.tabPage4.Controls.Add(this.varName);
+            this.tabPage4.Controls.Add(this.label6);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(719, 443);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "变量";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(202, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 12);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "结果：";
+            // 
+            // varValue
+            // 
+            this.varValue.Location = new System.Drawing.Point(249, 18);
+            this.varValue.Multiline = true;
+            this.varValue.Name = "varValue";
+            this.varValue.Size = new System.Drawing.Size(450, 63);
+            this.varValue.TabIndex = 3;
+            // 
+            // readVar
+            // 
+            this.readVar.Location = new System.Drawing.Point(17, 58);
+            this.readVar.Name = "readVar";
+            this.readVar.Size = new System.Drawing.Size(75, 23);
+            this.readVar.TabIndex = 2;
+            this.readVar.Text = "读";
+            this.readVar.UseVisualStyleBackColor = true;
+            this.readVar.Click += new System.EventHandler(this.readVar_Click);
+            // 
+            // varName
+            // 
+            this.varName.Location = new System.Drawing.Point(74, 18);
+            this.varName.Name = "varName";
+            this.varName.Size = new System.Drawing.Size(100, 21);
+            this.varName.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(15, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 12);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "变量名：";
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.listBoxPro);
+            this.tabPage5.Controls.Add(this.getPro);
+            this.tabPage5.Controls.Add(this.listBoxTask);
+            this.tabPage5.Controls.Add(this.getTask);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(719, 443);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "任务及程序";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // getTask
+            // 
+            this.getTask.Location = new System.Drawing.Point(17, 25);
+            this.getTask.Name = "getTask";
+            this.getTask.Size = new System.Drawing.Size(75, 23);
+            this.getTask.TabIndex = 0;
+            this.getTask.Text = "获取任务";
+            this.getTask.UseVisualStyleBackColor = true;
+            this.getTask.Click += new System.EventHandler(this.getTask_Click);
+            // 
+            // listBoxTask
+            // 
+            this.listBoxTask.FormattingEnabled = true;
+            this.listBoxTask.ItemHeight = 12;
+            this.listBoxTask.Location = new System.Drawing.Point(17, 68);
+            this.listBoxTask.Name = "listBoxTask";
+            this.listBoxTask.Size = new System.Drawing.Size(120, 88);
+            this.listBoxTask.TabIndex = 1;
+            // 
+            // getPro
+            // 
+            this.getPro.Location = new System.Drawing.Point(17, 193);
+            this.getPro.Name = "getPro";
+            this.getPro.Size = new System.Drawing.Size(75, 23);
+            this.getPro.TabIndex = 2;
+            this.getPro.Text = "获取程序";
+            this.getPro.UseVisualStyleBackColor = true;
+            this.getPro.Click += new System.EventHandler(this.getPro_Click);
+            // 
+            // listBoxPro
+            // 
+            this.listBoxPro.FormattingEnabled = true;
+            this.listBoxPro.ItemHeight = 12;
+            this.listBoxPro.Location = new System.Drawing.Point(17, 234);
+            this.listBoxPro.Name = "listBoxPro";
+            this.listBoxPro.Size = new System.Drawing.Size(120, 88);
+            this.listBoxPro.TabIndex = 3;
+            // 
+            // getAxisCord
+            // 
+            this.getAxisCord.Location = new System.Drawing.Point(6, 20);
+            this.getAxisCord.Name = "getAxisCord";
+            this.getAxisCord.Size = new System.Drawing.Size(75, 23);
+            this.getAxisCord.TabIndex = 10;
+            this.getAxisCord.Text = "获取";
+            this.getAxisCord.UseVisualStyleBackColor = true;
+            this.getAxisCord.Click += new System.EventHandler(this.getAxisCord_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.richTextCord);
+            this.groupBox4.Controls.Add(this.getAxisCord);
+            this.groupBox4.Location = new System.Drawing.Point(158, 20);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(193, 232);
+            this.groupBox4.TabIndex = 11;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "坐标";
+            // 
+            // richTextCord
+            // 
+            this.richTextCord.Location = new System.Drawing.Point(6, 52);
+            this.richTextCord.Name = "richTextCord";
+            this.richTextCord.Size = new System.Drawing.Size(171, 166);
+            this.richTextCord.TabIndex = 11;
+            this.richTextCord.Text = "";
             // 
             // Form1
             // 
@@ -519,6 +676,10 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -566,6 +727,20 @@
         private System.Windows.Forms.TextBox opModeValue;
         private System.Windows.Forms.TextBox speedRatioValue;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TextBox varValue;
+        private System.Windows.Forms.Button readVar;
+        private System.Windows.Forms.TextBox varName;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button getPro;
+        private System.Windows.Forms.ListBox listBoxTask;
+        private System.Windows.Forms.Button getTask;
+        private System.Windows.Forms.ListBox listBoxPro;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RichTextBox richTextCord;
+        private System.Windows.Forms.Button getAxisCord;
     }
 }
 
